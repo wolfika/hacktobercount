@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import Emojify, {emojify} from 'react-emojione';
+import Emojify from 'react-emojione';
 import queryString from 'query-string';
 import Form from '../Form/Form';
 import FormInput from '../FormInput/FormInput';

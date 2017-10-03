@@ -1,0 +1,30 @@
+.PullRequestListItem {
+  align-items: center;
+  color: var(--bright-text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  padding: 1rem .5rem;
+}
+
+.PullRequestListItem:not(:last-of-type) {
+  border-bottom: 2px solid rgba(255, 255, 255, .25);
+}
+
+.PullRequestListItem__emoji {
+  display: block;
+  position: relative;
+  top: 2px;
+}
+
+.PullRequestListItem a {
+  color: var(--bright-text-color);
+  display: inline-block;
+  margin-left: .5rem;
+  text-decoration: none;
+}
+
+.PullRequestListItem a:focus,
+.PullRequestListItem a:hover {
+  text-decoration: underline;
+}
