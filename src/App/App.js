@@ -1,4 +1,5 @@
 import {h, Component} from 'preact';
+import Emojify, {emojify} from 'react-emojione';
 import queryString from 'query-string';
 import Form from '../Form/Form';
 import FormInput from '../FormInput/FormInput';
@@ -75,7 +76,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App__inner">
-          <h1 className="App__title"><img src="lantern.png" alt="Jack-o-Lantern"/>Hacktobercount</h1>
+          <h1 className="App__title">{<Emojify style={{width: 64, height: 64}}>:jack_o_lantern:</Emojify>} Hacktobercount</h1>
 
           <p className="App__lead">Check your Hacktoberfest progress easily.</p>
 

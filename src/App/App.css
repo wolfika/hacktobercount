@@ -13,13 +13,6 @@
   text-align: center;
 }
 
-.App__title img {
-  height: 4rem;
-  margin-right: .5rem;
-  object-fit: cover;
-  width: 4rem;
-}
-
 .App__lead {
   margin: 1rem 0 2rem;
   text-align: center;
