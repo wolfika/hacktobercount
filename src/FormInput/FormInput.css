@@ -1,5 +1,6 @@
 .FormInput {
   appearance: none;
+  background: #fff;
   border: 3px solid #dedede;
   border-radius: 0;
   color: var(--dark-text-color);
