@@ -1,7 +1,18 @@
 .App {
-  margin: 5rem auto 0;
   max-width: 25rem;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .App {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .App {
+    margin: 5rem auto 0;
+  }
 }
 
 .App__title {
