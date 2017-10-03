@@ -33,14 +33,14 @@
   margin-top: 2rem;
 }
 
-.App__footer span {
+.App__footer__block {
   display: block;
   font-size: .7rem;
   margin: .5rem 0;
   text-align: center;
 }
 
-.App__footer span,
-.App__footer span a {
+.App__footer__block,
+.App__footer__block a {
   color: rgba(255, 255, 255, .35);
 }

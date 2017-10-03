@@ -117,9 +117,9 @@ class App extends Component {
         </div>
 
         <div className="App__footer">
-          <span>This website is in no way related to or associated with DigitalOcean or GitHub.</span>
-          <span><a href="https://hacktoberfest.digitalocean.com/" target="_blank" rel="noopener noreferrer">What is Hacktoberfest?</a></span>
-          <span>Made with ❤️ (and Preact) by <a href="https://github.com/wolfika/" target="_blank" rel="noopener noreferrer">Máté Farkas</a>.</span>
+          <span className="App__footer__block">This website is in no way related to or associated with DigitalOcean or GitHub.</span>
+          <span className="App__footer__block"><a href="https://hacktoberfest.digitalocean.com/" target="_blank" rel="noopener noreferrer">What is Hacktoberfest?</a></span>
+          <span className="App__footer__block">Made with <span role="img" aria-label="love">❤</span>️ (and Preact) by <a href="https://github.com/wolfika/" target="_blank" rel="noopener noreferrer">Máté Farkas</a>.</span>
         </div>
       </div>
     );
