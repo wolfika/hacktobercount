@@ -6,7 +6,9 @@ import FormInput from '../FormInput/FormInput';
 import FormSubmit from '../FormSubmit/FormSubmit';
 import PullRequestList from '../PullRequestList/PullRequestList';
 import PullRequestListItem from '../PullRequestListItem/PullRequestListItem';
+import ResultBox from '../ResultBox/ResultBox';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { getMotivationMessage } from '../utils/motivation';
 import {UserNotFoundError, GitHubAPIError} from '../utils/errors';
 import './App.css';
 
@@ -19,7 +21,8 @@ class App extends Component {
       username: '',
       isLoading: false,
       error: null,
-      pullRequests: []
+      pullRequests: [],
+      motivation: ''
     };
   }
 
@@ -60,7 +63,12 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        this.setState({pullRequests: data.items.slice(0, 4)});
+        const prsToSave = data.items.slice(0, 4);
+
+        this.setState({
+          pullRequests: prsToSave,
+          motivation: getMotivationMessage(prsToSave.length)
+        });
       })
       .catch(err => {
         this.setState({error: err.message});
@@ -97,9 +105,13 @@ class App extends Component {
           {this.state.error ? <ErrorMessage>{this.state.error}</ErrorMessage> : null}
 
           {this.state.pullRequests.length ?
-            <PullRequestList>
-              {this.state.pullRequests.map(pullRequest => <PullRequestListItem {...pullRequest}/>)}
-            </PullRequestList>
+            <div>
+              <ResultBox count={this.state.pullRequests.length} needed={4} motivation={this.state.motivation}/>
+
+              <PullRequestList>
+                {this.state.pullRequests.map(pullRequest => <PullRequestListItem {...pullRequest}/>)}
+              </PullRequestList>
+            </div>
             :
             null}
         </div>
