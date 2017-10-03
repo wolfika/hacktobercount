@@ -1,0 +1,16 @@
+{
+  "name": "hacktobercount",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@just-boris/preact-scripts": "1.0.7",
+    "preact": "^8.2.5",
+    "query-string": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
+}

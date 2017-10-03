@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #3241a6;
+  --primary-color-darker: #202a6b;
+  --accent-color: #ff625f;
+  --accent-color-darker: #f35d5b;
+  --bright-text-color: #fff;
+  --dark-text-color: #000;
+  --roboto: Roboto, Helvetica, Arial, sans-serif
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: radial-gradient(circle, var(--primary-color) 0, var(--primary-color-darker) 120%);
+  color: var(--bright-text-color);
+  font-family: var(--roboto);
+  font-size: 1rem;
+}

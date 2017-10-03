@@ -1,0 +1,26 @@
+.App {
+  margin: 8rem auto 0;
+  max-width: 25rem;
+  width: 100%;
+}
+
+.App__title {
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.App__title img {
+  height: 4rem;
+  margin-right: .5rem;
+  object-fit: cover;
+  width: 4rem;
+}
+
+.App__lead {
+  margin: 1rem 0 2rem;
+  text-align: center;
+}

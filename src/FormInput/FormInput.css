@@ -1,0 +1,22 @@
+.FormInput {
+  appearance: none;
+  border: 3px solid #dedede;
+  border-radius: 0;
+  color: var(--dark-text-color);
+  display: block;
+  font-size: 1.25rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 1rem 0;
+  padding: 0 .5rem;
+  width: 100%;
+}
+
+.FormInput:hover {
+  border-color: #ccc;
+}
+
+.FormInput:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}

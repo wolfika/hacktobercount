@@ -1,0 +1,42 @@
+.FormSubmit {
+  appearance: none;
+  background: var(--accent-color);
+  border: solid 1px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, .2);
+  color: var(--bright-text-color);
+  display: block;
+  font-family: var(--roboto);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  min-width: 8rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transform: translateY(0);
+}
+
+.FormSubmit[disabled] {
+  background: #aaa;
+  color: #ddd;
+  cursor: not-allowed;
+  pointer-event: none;
+}
+
+.FormSubmit:not([disabled]):hover {
+  background: var(--accent-color-darker);
+  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transform: translateY(2px);
+}
+
+.FormSubmit:not([disabled]):focus {
+  background: var(--accent-color-darker);
+  outline: none;
+}
+
+.FormSubmit:not([disabled]):active {
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, .2);
+  transform: translateY(4px);
+}
