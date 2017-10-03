@@ -70,31 +70,38 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    this.getPullRequests();
   }
 
   render() {
     return (
       <div className="App">
         <div className="App__inner">
-          <h1 className="App__title">{<Emojify style={{width: 64, height: 64}}>:jack_o_lantern:</Emojify>} Hacktobercount</h1>
+          <h1 className="App__title">{<Emojify style={{width: 64, height: 64}}>:jack_o_lantern:</Emojify>}
+            Hacktobercount</h1>
 
           <p className="App__lead">Check your Hacktoberfest progress easily.</p>
 
           <Form className="Form" onSubmit={this.handleSubmit.bind(this)}>
-            <p className="Form__instruction">Just insert your GitHub username in this input and press enter to fetch your PR count in October.</p>
+            <p className="Form__instruction">Just insert your GitHub username in this input and press enter to fetch
+              your PR count in October.</p>
 
             <FormInput onKeyUp={this.onInputChange.bind(this)} value={this.state.username}/>
 
             <FormSubmit text="Let's see!"
-                        onClick={this.getPullRequests.bind(this)}
+                        onClick={this.handleSubmit.bind(this)}
                         disabled={this.state.isLoading || this.state.username.length < 1}/>
           </Form>
 
           {this.state.error ? <ErrorMessage>{this.state.error}</ErrorMessage> : null}
 
-          <PullRequestList>
-            {this.state.pullRequests.map(pullRequest => <PullRequestListItem {...pullRequest}/>)}
-          </PullRequestList>
+          {this.state.pullRequests.length ?
+            <PullRequestList>
+              {this.state.pullRequests.map(pullRequest => <PullRequestListItem {...pullRequest}/>)}
+            </PullRequestList>
+            :
+            null}
         </div>
       </div>
     );
