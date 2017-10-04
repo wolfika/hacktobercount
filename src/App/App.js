@@ -39,6 +39,7 @@ class App extends Component {
     this.setState({
       isLoading: true,
       error: null,
+      complete: false,
       pullRequests: []
     });
 
@@ -67,6 +68,7 @@ class App extends Component {
 
         this.setState({
           pullRequests: prsToSave,
+          complete: true,
           motivation: getMotivationMessage(prsToSave.length)
         });
       })
@@ -104,7 +106,7 @@ class App extends Component {
 
           {this.state.error ? <ErrorMessage>{this.state.error}</ErrorMessage> : null}
 
-          {this.state.pullRequests.length ?
+          {this.state.complete ?
             <div>
               <ResultBox count={this.state.pullRequests.length} needed={4} motivation={this.state.motivation}/>
 
