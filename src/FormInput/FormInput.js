@@ -9,6 +9,7 @@ export default (props) => {
            title="GitHub username"
            aria-label="GitHub username"
            required
+           autofocus
            value={props.value}
            onKeyUp={props.onKeyUp}/>
   );
