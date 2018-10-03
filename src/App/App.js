@@ -45,7 +45,7 @@ class App extends Component {
 
     const queryParams = {
       type: 'pr', // filter results to pull requests,
-      q: `is:pr author:${this.state.username} is:public created:2017-10-01..2017-10-31 sort:created-desc`
+      q: `is:pr author:${this.state.username} is:public created:2018-10-01..2018-10-31 sort:created-desc`
     };
 
     fetch(`${API_URL}?${queryString.stringify(queryParams)}`, {cache: 'default'})
