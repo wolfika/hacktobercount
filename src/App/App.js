@@ -8,11 +8,13 @@ import PullRequestList from '../PullRequestList/PullRequestList';
 import PullRequestListItem from '../PullRequestListItem/PullRequestListItem';
 import ResultBox from '../ResultBox/ResultBox';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { numberOfNeededPullRequests, getMotivationMessage } from '../utils/motivation';
+import { getMotivationMessage } from '../utils/motivation';
 import { UserNotFoundError, GitHubAPIError } from '../utils/errors';
 import './App.css';
 
 const API_URL = 'https://api.github.com/search/issues';
+
+const NUMBER_OF_PULL_REQUESTS_NEEDED = 5;
 
 class App extends Component {
   constructor() {
@@ -64,7 +66,7 @@ class App extends Component {
         return response.json();
       })
       .then(data => {
-        const prsToSave = data.items.slice(0, 4);
+        const prsToSave = data.items.slice(0, NUMBER_OF_PULL_REQUESTS_NEEDED);
 
         this.setState({
           pullRequests: prsToSave,
@@ -108,7 +110,7 @@ class App extends Component {
 
           {this.state.complete ?
             <div>
-              <ResultBox count={this.state.pullRequests.length} needed={numberOfNeededPullRequests} motivation={this.state.motivation} />
+              <ResultBox count={this.state.pullRequests.length} needed={NUMBER_OF_PULL_REQUESTS_NEEDED} motivation={this.state.motivation} />
 
               <PullRequestList>
                 {this.state.pullRequests.map(pullRequest => <PullRequestListItem {...pullRequest} />)}
