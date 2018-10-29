@@ -36,8 +36,6 @@ const messages = {
   ]
 };
 
-export const numberOfNeededPullRequests = Object.keys(messages).length - 1;
-
 export const getMotivationMessage = count => {
 
 
