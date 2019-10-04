@@ -14,7 +14,7 @@ import './App.css';
 
 const API_URL = 'https://api.github.com/search/issues';
 
-const NUMBER_OF_PULL_REQUESTS_NEEDED = 5;
+const NUMBER_OF_PULL_REQUESTS_NEEDED = 4;
 
 class App extends Component {
   constructor() {
