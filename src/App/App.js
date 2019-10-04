@@ -45,9 +45,10 @@ class App extends Component {
       pullRequests: []
     });
 
+    const year = new Date().getFullYear();
     const queryParams = {
       type: 'pr', // filter results to pull requests,
-      q: `is:pr author:${this.state.username} is:public created:2018-10-01..2018-10-31 sort:created-desc`
+      q: `is:pr author:${this.state.username} is:public created:${year}-10-01..${year}-10-31 sort:created-desc`
     };
 
     fetch(`${API_URL}?${queryString.stringify(queryParams)}`, { cache: 'default' })
